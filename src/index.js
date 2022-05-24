@@ -2,7 +2,12 @@ Remember the acronym UPS check
 
 Step One (Understand). We have to understand the problem.
 1. What is the unknown?
+reurns all mnemonics for this phone number
+in any order 
+
 2. What are the data inputs?
+a stringified phone number 
+
 3. Can you restate the problem in your own words?
 4. Can the unknown be determined from the data inputs?
 5. Is the data inputs sufficient to determine the unknown? Insufficient? Redundant? Contradictory? 
@@ -31,3 +36,20 @@ IV. 	Step Four (Check). Examine the solution obtained and refactor.
 20.  Can you improve the performance? 
 21.   How have other people solved this problem?
 
+function phoneNumberMnemonics(phoneNumber){
+  // split into char
+  // deal with 0 or 1
+  for (let idx of array){
+    if (array[idx] === 1){
+      return 1;
+    } else if (array[idx] === 0){
+      return 0;
+    }
+  function helper(i, array, combs){
+    // base case 
+    // logic like permtations
+
+  }
+  }
+
+}
