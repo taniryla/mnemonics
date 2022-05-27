@@ -81,7 +81,7 @@ function phoneNumberMnemonics(phoneNumber) {
       let mnemonic = current.join('');
       mnemonicsFound.push(mnemonic);
     } else {
-      let digit = phoneNumber(idx);
+      let digit = phoneNumber[idx];
       let letters = PHONE_CUES[digit];
       for (let letter in letters) {
         current[idx] = letter;
