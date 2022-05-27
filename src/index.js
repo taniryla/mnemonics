@@ -62,10 +62,12 @@ let PHONE_CUES = {
 }
 
 function phoneNumberMnemonics(phoneNumber) {
+  // result is the array holding all the current combination arrays
   let result = [];
+  // current is the current mnemonic array created
   let current = [];
 
-
+  // recursion to create currentn arrays
     function helper(idx) {
       // base case from recursion stack
       if (idx >= phoneNumber) {
