@@ -51,7 +51,7 @@
 // 21.   How have other people solved this problem?
 
 function phoneNumberMnemonics(phoneNumber) {
-  let newArr = [];
+  let combs = [];
   // create array for each number
   let two = ["a", "b", "c"];
   let three = ["d", "e", "f"];
@@ -64,7 +64,8 @@ function phoneNumberMnemonics(phoneNumber) {
   // split phone number into individual digits
   phoneNumber.split("");
   for (let key in phoneNumber) {
-    if (phoneNumber[element] === 0) {
+    // convert non-0 or non-1 number into full text word
+    if (phoneNumber[key] === 0) {
       newArr.push(1);
     } else if (phoneNumber[key] === 0) {
       newArr.push(0);
@@ -88,14 +89,15 @@ function phoneNumberMnemonics(phoneNumber) {
 
     function helper(array, set, combs) {
       // base case from recursion stack
-
-      phone;
-      // convert non-0 or non-1 number into full text word
+      if (set.length === 0) return;
       // iterate through each element in the "eight" variable
-      // iterate through each array and set.push(newArr[idx])
-      for (let idx of set) {
+      for (let x of combs) {
+        for (let idx of array) {
+          // iterate through each array and set.push(newArr[idx])
+          set.push(array[idx]);
+        }
         // combs.push(set) push the array into the combs array
-        combs.push(set[idx]);
+        combs.push(set[x]);
       }
     }
   }
