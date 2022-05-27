@@ -101,4 +101,5 @@ function phoneNumberMnemonics(phoneNumber) {
       }
     }
   }
+  return combs;
 }
