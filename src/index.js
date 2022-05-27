@@ -68,25 +68,14 @@ function phoneNumberMnemonics(phoneNumber) {
   let result = [];
   // current is the current mnemonic array created
   let current = ["0"] * phoneNumber.length;
-  
+  let mnemonicsFound = [];
 
   // recursion to create currentn arrays
-    function helper(idx) {
+  helper(0, phoneNumber, current, mnemonicsFound) {
       // base case from recursion stack
-      if (idx >= phoneNumber) {
-        helper(idx + 1);
-      }
+      return mnemonicsFound;
 
+  function helper(idx, phoneNumber, current, mnemonicsFound){
       // iterate through each element in the "eight" variable
-      for (let x of combs) {
-        for (let idx of array) {
-          // iterate through each array and set.push(newArr[idx])
-          set.push(array[idx]);
-        }
-        // combs.push(set) push the array into the combs array
-        combs.push(set[x]);
-      }
-    }
-  }
-  return combs;
+      
 }
