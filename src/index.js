@@ -51,17 +51,18 @@
 // 21.   How have other people solved this problem?
 
 let PHONE_CUES = {
-  "0": ["0"],
-  "1": ["1"],
-  "2": ["a", "b", "c"],
-  "3": ["d", "e", "f"],
-  "4": ["g", "h", "i"],
-  "5": ["j", "k", "l"],
-  "6": ["m", "n", "l"],
-  "7": ["p", "q", "r", "s"],
-  "8": ["t", "u", "v"],
-  "9": ["w", "x", "y", "z"],
+  0: ["0"],
+  1: ["1"],
+  2: ["a", "b", "c"],
+  3: ["d", "e", "f"],
+  4: ["g", "h", "i"],
+  5: ["j", "k", "l"],
+  6: ["m", "n", "l"],
+  7: ["p", "q", "r", "s"],
+  8: ["t", "u", "v"],
+  9: ["w", "x", "y", "z"],
 }
+
 
 function phoneNumberMnemonics(phoneNumber) {
   // result is the array holding all the current combination arrays
