@@ -68,15 +68,19 @@ function phoneNumberMnemonics(phoneNumber) {
     } else if (phoneNumber[key] === 0) {
       newArr.push(0);
     } else if (phoneNumber[key] > 1) {
-      newArr.push(helper());
+      newArr.push(helper(key, newArr, combs));
     }
-    function helper(i, array, combs) {
-      // base case
+    function helper(idx, set, combs) {
+      // base case from recursion stack
       // split phone number into individual digits
+      phone;
       // convert non-0 or non-1 number into full text word
       // iterate through each element in the "eight" variable
-      // combs.push(array) push the array into the combs array
-      // logic like permtations
+      // iterate through each array and set.push(newArr[idx])
+      for (let idx of set) {
+        // combs.push(set) push the array into the combs array
+        combs.push(set[idx]);
+      }
     }
   }
 }
