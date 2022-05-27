@@ -71,11 +71,21 @@ function phoneNumberMnemonics(phoneNumber) {
   let mnemonicsFound = [];
 
   // recursion to create currentn arrays
-  helper(0, phoneNumber, current, mnemonicsFound) {
-      // base case from recursion stack
-      return mnemonicsFound;
-
+  helper(0, phoneNumber, current, mnemonicsFound);
+  // base case from recursion stack
+  return mnemonicsFound;
+  
   function helper(idx, phoneNumber, current, mnemonicsFound){
-      // iterate through each element in the "eight" variable
-      
+    // iterate through each element in the "eight" variable
+    if (idx === phoneNumber.length){
+      let mnemonic = ''.join(current);
+      mnemonicsFound.push(mnemonic);
+    } else {
+      let digit = phoneNumber(idx);
+      let letters = PHONE_CUES[digit];
+      for (let letter in letters) {
+        current[idx] = letter;
+        helper(idx + 1, phoneNumber, current, mnemonicsFound);        
+        }
+      }
 }
