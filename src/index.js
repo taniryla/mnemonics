@@ -52,6 +52,7 @@
 
 function phoneNumberMnemonics(phoneNumber) {
   let combs = [];
+  let newArr = [];
   // create array for each number
   let two = ["a", "b", "c"];
   let three = ["d", "e", "f"];
@@ -62,10 +63,10 @@ function phoneNumberMnemonics(phoneNumber) {
   let eight = ["t", "u", "v"];
   let nine = ["w", "x", "y", "z"];
   // split phone number into individual digits
-  phoneNumber.split("");
-  for (let key in phoneNumber) {
+  let digits = phoneNumber.toString().split("");
+  for (let key in digits) {
     // convert non-0 or non-1 number into full text word
-    if (phoneNumber[key] === 0) {
+    if (digits[key] === 0) {
       newArr.push(1);
     } else if (phoneNumber[key] === 0) {
       newArr.push(0);
@@ -89,7 +90,10 @@ function phoneNumberMnemonics(phoneNumber) {
 
     function helper(array, set, combs) {
       // base case from recursion stack
-      if (set.length === 0) return;
+      if (set.length === 0) {
+        newArr = [];
+        return;
+      }
       // iterate through each element in the "eight" variable
       for (let x of combs) {
         for (let idx of array) {
