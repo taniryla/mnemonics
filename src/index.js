@@ -37,7 +37,15 @@ IV. 	Step Four (Check). Examine the solution obtained and refactor.
 21.   How have other people solved this problem?
 
 function phoneNumberMnemonics(phoneNumber){
-  // split into char
+  // create array for each number
+  let two = ['a', 'b', 'c'];
+  let three = ['d', 'e', 'f'];
+  let four = ['g', 'h', 'i'];
+  let five = ['j', 'k', 'l'];
+  let six = ['m', 'n', 'l'];
+  let seven = ['p', 'q', 'r', 's'];
+  let eight = ['t', 'u', 'v'];
+  let nine = ['w', 'x', 'y', 'z'];
   // deal with 0 or 1
   for (let idx of array){
     if (array[idx] === 1){
