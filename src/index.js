@@ -50,50 +50,28 @@
 // 20.  Can you improve the performance?
 // 21.   How have other people solved this problem?
 
-function phoneNumberMnemonics(phoneNumber) {
-  let combs = [];
-  let newArr = [];
-  // create array for each number
-  let two = ["a", "b", "c"];
-  let three = ["d", "e", "f"];
-  let four = ["g", "h", "i"];
-  let five = ["j", "k", "l"];
-  let six = ["m", "n", "l"];
-  let seven = ["p", "q", "r", "s"];
-  let eight = ["t", "u", "v"];
-  let nine = ["w", "x", "y", "z"];
-  // split phone number into individual digits
-  let digits = phoneNumber.toString().split("");
-  for (let key in digits) {
-    // convert non-0 or non-1 number into full text word
-    if (digits[key] === 0) {
-      newArr.push(1);
-    } else if (phoneNumber[key] === 0) {
-      newArr.push(0);
-    } else if (phoneNumber[key] === 2) {
-      newArr.push(helper(two, newArr, combs));
-    } else if (phoneNumber[key] === 3) {
-      newArr.push(helper(three, newArr, combs));
-    } else if (phoneNumber[key] === 4) {
-      newArr.push(helper(four, newArr, combs));
-    } else if (phoneNumber[key] === 5) {
-      newArr.push(helper(five, newArr, combs));
-    } else if (phoneNumber[key] === 6) {
-      newArr.push(helper(six, newArr, combs));
-    } else if (phoneNumber[key] === 7) {
-      newArr.push(helper(seven, newArr, combs));
-    } else if (phoneNumber[key] === 8) {
-      newArr.push(helper(eight, newArr, combs));
-    } else if (phoneNumber[key] === 9) {
-      newArr.push(helper(nine, newArr, combs));
-    }
+let PHONE_CUES = {
+  "2" : ["a", "b", "c"];
+  "3" : ["d", "e", "f"];
+  "4" : ["g", "h", "i"];
+  "5" : ["j", "k", "l"];
+  "6" : ["m", "n", "l"];
+  "7" : ["p", "q", "r", "s"];
+  "8" : ["t", "u", "v"];
+  "9" : ["w", "x", "y", "z"];
+}
 
-    function helper(array, set, combs) {
+function phoneNumberMnemonics(phoneNumber) {
+  let result = [];
+  let current = [];
+
+
+    function helper(idx) {
       // base case from recursion stack
-      if (set.length === 0) {
-        newArr = [];
-        return;
+      if (idx >= phoneNumber) {
+        helper(idx + 1);
       }
+
       // iterate through each element in the "eight" variable
       for (let x of combs) {
         for (let idx of array) {
