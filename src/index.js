@@ -61,18 +61,34 @@ function phoneNumberMnemonics(phoneNumber) {
   let seven = ["p", "q", "r", "s"];
   let eight = ["t", "u", "v"];
   let nine = ["w", "x", "y", "z"];
-  // deal with 0 or 1
-  for (let key of phoneNumber) {
-    if (phoneNumber[key] === 1) {
+  // split phone number into individual digits
+  phoneNumber.split("");
+  for (let key in phoneNumber) {
+    if (phoneNumber[element] === 0) {
       newArr.push(1);
     } else if (phoneNumber[key] === 0) {
       newArr.push(0);
-    } else if (phoneNumber[key] > 1) {
-      newArr.push(helper(key, newArr, combs));
+    } else if (phoneNumber[key] === 2) {
+      newArr.push(helper(two, newArr, combs));
+    } else if (phoneNumber[key] === 3) {
+      newArr.push(helper(three, newArr, combs));
+    } else if (phoneNumber[key] === 4) {
+      newArr.push(helper(four, newArr, combs));
+    } else if (phoneNumber[key] === 5) {
+      newArr.push(helper(five, newArr, combs));
+    } else if (phoneNumber[key] === 6) {
+      newArr.push(helper(six, newArr, combs));
+    } else if (phoneNumber[key] === 7) {
+      newArr.push(helper(seven, newArr, combs));
+    } else if (phoneNumber[key] === 8) {
+      newArr.push(helper(eight, newArr, combs));
+    } else if (phoneNumber[key] === 9) {
+      newArr.push(helper(nine, newArr, combs));
     }
-    function helper(idx, set, combs) {
+
+    function helper(array, set, combs) {
       // base case from recursion stack
-      // split phone number into individual digits
+
       phone;
       // convert non-0 or non-1 number into full text word
       // iterate through each element in the "eight" variable
