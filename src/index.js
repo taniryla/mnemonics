@@ -65,9 +65,8 @@ let PHONE_CUES = {
 
 function phoneNumberMnemonics(phoneNumber) {
   // result is the array holding all the current combination arrays
-  let result = [];
   // current is the current mnemonic array created
-  let current = ["0"] * phoneNumber.length;
+  let current = new Array(phoneNumber.length).fill('0');
   let mnemonicsFound = [];
 
   // recursion to create currentn arrays
@@ -78,7 +77,7 @@ function phoneNumberMnemonics(phoneNumber) {
   function helper(idx, phoneNumber, current, mnemonicsFound){
     // iterate through each element in the "eight" variable
     if (idx === phoneNumber.length){
-      let mnemonic = ''.join(current);
+      let mnemonic = current.join('');
       mnemonicsFound.push(mnemonic);
     } else {
       let digit = phoneNumber(idx);
